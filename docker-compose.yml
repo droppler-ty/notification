@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  cassandra:
+    image: cassandra
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+  app:
+    container_name: notification-app
+    build: .
+    ports:
+      - "8080:8080"
+    restart: on-failure
